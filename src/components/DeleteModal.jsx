@@ -26,7 +26,7 @@ const DeleteModal = ({id}) => {
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
                 <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-300" onClick={closeModal}></div>
                 <div className="relative bg-gray-300 border border-gray-300 rounded-xl shadow-sm p-4 md:p-6 w-full max-w-sm z-10 animate-in zoom-in-95 duration-300">
-                    <button onClick={closeModal} type="button" className="absolute cursor-pointer top-3 end-2.5 text-body bg-transparent hover:bg-neutral-tertiary hover:text-heading rounded-base text-sm w-9 h-9 ms-auto inline-flex justify-center items-center" data-modal-hide="popup-modal">
+                    <button onClick={closeModal} type="button" className="absolute cursor-pointer top-3 inset-e-2.5 text-body bg-transparent hover:bg-neutral-tertiary hover:text-heading rounded-base text-sm w-9 h-9 ms-auto inline-flex justify-center items-center" data-modal-hide="popup-modal">
                         <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6" /></svg>
                         <span className="sr-only">Close modal</span>
                     </button>
