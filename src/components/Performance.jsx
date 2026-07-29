@@ -23,7 +23,7 @@ const Performance = () => {
                    </div>
  
                    <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-thin">
-                     <div className="min-w-[650px]">
+                     <div className="min-w-162.5">
                        <div className="grid grid-cols-7 ml-40 gap-4 mb-8 text-center">
                          {days.map(day => (
                            <div key={day} className="text-[10px] font-black text-slate-300 uppercase tracking-widest">{day}</div>

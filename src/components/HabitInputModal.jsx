@@ -60,7 +60,7 @@ const HabitInputModal = () => {
       {modal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-300"></div>
-          <div className="relative bg-white w-full max-w-md rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl p-6 sm:p-8 animate-in zoom-in-95 duration-300 overflow-hidden">
+          <div className="relative bg-white w-full max-w-md rounded-4xl sm:rounded-[2.5rem] shadow-2xl p-6 sm:p-8 animate-in zoom-in-95 duration-300 overflow-hidden">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-2xl font-black text-slate-900">New Habit</h2>
               <button
