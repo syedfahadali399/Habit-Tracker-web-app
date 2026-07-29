@@ -39,7 +39,7 @@ const HabitList = () => {
 
   return (
     <>
-      <div className="flex-1 overflow-y-auto px-10 pb-12 space-y-10">
+      <div className="flex-1 overflow-y-auto px-4 sm:px-10 pb-12 space-y-10">
         <div className="flex flex-col gap-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div className="lg:col-span-2 space-y-6">
             <section>
@@ -57,25 +57,25 @@ const HabitList = () => {
                     return (
                       <div
                         key={habit.id}
-                        className={`group border border-slate-200 rounded-4xl p-5 flex items-center gap-5 transition-all hover:shadow-xl hover:shadow-indigo-500/5 ${completed ? 'bg-slate-50' : 'bg-white'}`}
+                        className={`group border border-slate-200 rounded-3xl sm:rounded-4xl p-4 sm:p-5 flex items-center gap-3 sm:gap-5 transition-all hover:shadow-xl hover:shadow-indigo-500/5 ${completed ? 'bg-slate-50' : 'bg-white'}`}
                       >
                         <button
                           onClick={() => handleToggle(habit.id)}
                           className={`shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center transition-all cursor-pointer
-                              ${completed ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-200' : 'bg-slate-100 text-slate-400 hover:text-indigo-600'}
-                              `}
+                               ${completed ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-200' : 'bg-slate-100 text-slate-400 hover:text-indigo-600'}
+                               `}
                         >
                           {completed ? <CheckCircle2 size={24} /> : <Circle size={24} />}
                         </button>
 
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className={`w-2 h-2 rounded-full bg-${habit.color}-600`}></span>
-                            <h3 className={`font-bold transition-all ${completed ? 'text-slate-400 line-through' : 'text-slate-800'}`}>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1 flex-wrap">
+                            <span className={`w-2 h-2 rounded-full bg-${habit.color}-600 shrink-0`}></span>
+                            <h3 className={`font-bold transition-all truncate ${completed ? 'text-slate-400 line-through' : 'text-slate-800'}`}>
                               {habit.name}
                             </h3>
                           </div>
-                          <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">{habit.goal} • {habit.category}</p>
+                          <p className="text-xs text-slate-400 font-bold uppercase tracking-wider truncate">{habit.goal} • {habit.category}</p>
                           {completed && (
                             <span className="inline-block mt-1 text-[10px] font-black uppercase tracking-widest text-emerald-500">
                               Completed today
@@ -83,7 +83,7 @@ const HabitList = () => {
                           )}
                         </div>
 
-                        <div className="md:flex gap-1.5 px-4 border-x border-slate-100">
+                        <div className="hidden md:flex gap-1.5 px-4 border-x border-slate-100">
                           {habit.completed.map((done, i) => (
                             <div
                               key={i}
@@ -92,14 +92,14 @@ const HabitList = () => {
                           ))}
                         </div>
 
-                        <div className="text-right px-4">
-                          <div className="flex items-center gap-1 text-orange-500 font-black">
+                        <div className="text-right px-4 shrink-0">
+                          <div className="flex items-center gap-1 text-orange-500 font-black justify-end">
                             <Flame size={14} fill="currentColor" />
                             <span className="text-sm">{habit.completed.filter(habit => habit.status).length}</span>
                           </div>
                           <p className="text-[10px] font-black text-slate-300 uppercase">Streak</p>
                         </div>
-                        <button onClick={toggleDeleteModal}>
+                        <button onClick={toggleDeleteModal} className="shrink-0">
                           <X size={24} className="text-slate-400 hover:text-red-600 cursor-pointer" />
                         </button>
                         <DeleteModal id={habit.id} />
